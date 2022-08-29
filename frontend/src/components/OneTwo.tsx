@@ -1,4 +1,4 @@
 import React from 'react'
 export function OneTwo() {
-	return <div>OneTwo</div>
+	return <div>OneTwdo</div>
 }

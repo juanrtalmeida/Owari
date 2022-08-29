@@ -1,23 +1,25 @@
-import React, { Fragment, ReactNode } from 'react'
+import React, { Fragment } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import { NotFound } from './NotFound'
 
 const routes = Object.keys(
-	import.meta.glob('/src/pages/**/[a-z[]*.tsx', { eager: true })
+	import.meta.glob('/src/pages/**/[a-z[]*.tsx', {
+		eager: true
+	})
 ).map((route) => {
 	const path = route
 		.replace(/\/src\/pages|index|\.tsx$/g, '')
 		.replace(/\[\.{3}.+\]/, '*')
 		.replace(/\[(.+)\]/, ':$1')
 	const FileObject = import.meta.glob('/src/pages/**/[a-z[]*.tsx', {
-		eager: true,
-	})[route] as Object
+		eager: true
+	})[route] as object
 
 	const Component = Object.values(FileObject)[0]
 
 	return {
-		path,
 		component: Component,
+		path
 	}
 })
 

@@ -7,12 +7,13 @@
 	"editor.insertSpaces": true,
 	"editor.tabSize": 2,
 	"editor.codeActionsOnSave": {
-		"source.fixAll.eslint": true
+		"source.fixAll.eslint": true,
+		"source.formatDocument": true
 	},
 	"editor.formatOnSave": true,
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"[typescript]": {
-		"editor.formatOnSave": false
+		"editor.formatOnSave": true
 	},
 	"emmet.includeLanguages": {
 		"typescript": "typescriptreact"
