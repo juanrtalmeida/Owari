@@ -6,23 +6,16 @@
   "editor.detectIndentation": false,
   "editor.insertSpaces": true,
   "editor.tabSize": 2,
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
-  },
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[elixir]": {
-    "editor.formatOnPaste": false
+    "editor.formatOnSave": true
   },
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
   "search.exclude": {
     ".Inspect": true,
-    "**/node_modules": true,
-    "**/bower_components": true
-  },
-  "[css]": {
-    "editor.formatOnSave": true
+    "**/node_modules": true
   }
 }
