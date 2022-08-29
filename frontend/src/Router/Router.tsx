@@ -1,5 +1,5 @@
-import { RouterAllRoutes } from "./RouterRoutes";
+import { RouterAllRoutes } from './RouterRoutes'
 
 export function Router() {
-  return <RouterAllRoutes />;
+	return <RouterAllRoutes />
 }
