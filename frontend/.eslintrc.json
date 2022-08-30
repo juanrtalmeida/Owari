@@ -17,6 +17,7 @@
 	},
 	"plugins": ["react", "@typescript-eslint", "prettier", "unused-imports"],
 	"rules": {
+		"prettier/prettier": 0,
 		"indent": ["error", "tab"],
 		"linebreak-style": ["error", "windows"],
 		"quotes": ["error", "single"],
@@ -44,7 +45,7 @@
 		"space-in-parens": "error",
 		"space-infix-ops": "error",
 		"object-curly-spacing": ["error", "always"],
-		"max-len": ["error", { "code": 120 }],
+		"max-len": ["error", { "code": 150 }],
 		"sort-keys": ["warn", "asc", { "natural": true, "caseSensitive": true }],
 		"jsx-quotes": ["error", "prefer-double"],
 		"unused-imports/no-unused-imports": "error",
