@@ -14,6 +14,7 @@ defmodule Backend.Repo.Migrations.CreateUsers do
 
     alter table(:users) do
       add :validated, :boolean
+      add :validation_number, :integer
     end
   end
 end

@@ -20,6 +20,7 @@ config :backend, BackendWeb.Endpoint,
   secret_key_base: "irahX426/3ygpFO2v4GmohUh4msughRGKMILRIa84JmQKhkqoagcfoqupMfH8uTx",
   server: false
 
+config :backend, Backend.Mailer, adapter: Bamboo.TestAdapter
 # In test we don't send emails.
 config :backend, Backend.Mailer, adapter: Swoosh.Adapters.Test
 

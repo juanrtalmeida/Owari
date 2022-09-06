@@ -17,5 +17,9 @@
   "search.exclude": {
     ".Inspect": true,
     "**/node_modules": true
+  },
+  "prettier.singleQuote": false,
+  "[html-eex]": {
+    "editor.defaultFormatter": "JakeBecker.elixir-ls"
   }
 }

@@ -17,6 +17,7 @@ config :backend, BackendWeb.Endpoint,
   pubsub_server: Backend.PubSub,
   live_view: [signing_salt: "7Kb+TW+V"]
 
+config :backend, Backend.Mailer, adapter: Bamboo.LocalAdapter
 # Configures the mailer
 #
 # By default it uses the "Local" adapter which stores the emails
@@ -24,14 +25,10 @@ config :backend, BackendWeb.Endpoint,
 #
 # For production it's recommended to configure a different adapter
 # at the `config/runtime.exs`.
-config :backend, Backend.Mailer, adapter: Swoosh.Adapters.Local
 
 config :backend, Backend.Repo,
   migration_primary_key: [type: :binary_id],
   migration_foreign_key: [type: :binary_id]
-
-# Swoosh API client is needed for adapters other than SMTP.
-config :swoosh, :api_client, false
 
 # Configures Elixir's Logger
 config :logger, :console,

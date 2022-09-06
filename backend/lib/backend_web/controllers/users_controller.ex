@@ -1,11 +1,13 @@
 defmodule BackendWeb.UsersController do
   use BackendWeb, :controller
 
-  alias Backend.Users.{Create, Login, Infos}
+  alias Backend.Users.{Create, Login, Infos, EmailRegister, Validation}
   alias BackendWeb.{Token}
 
   def create(conn, params) do
     with {:ok, user} <- Create.call(params) do
+      EmailRegister.send(user)
+
       conn
       |> put_status(:created)
       |> render("create.json", user: user)
@@ -24,6 +26,21 @@ defmodule BackendWeb.UsersController do
         conn
         |> put_status(:not_acceptable)
         |> render(:password_wrong, %{})
+    end
+  end
+
+  def validation(conn, params) do
+    email = conn.assigns[:email]
+
+    with {:ok} <- Validation.call(params, email) do
+      conn
+      |> put_status(:accepted)
+      |> render("validation_accepted.json", %{})
+    else
+      {:fail} ->
+        conn
+        |> put_status(:not_acceptable)
+        |> render("validation_fail.json", %{})
     end
   end
 
