@@ -13,8 +13,16 @@ defmodule Backend.User do
     field :name, :string
     field :password, :string
     field :validated, :boolean
+    field :validation_number, :integer
 
     timestamps()
+  end
+
+  def changeset_validation(params) do
+    %__MODULE__{}
+    |> cast(params, [:validation_number])
+    |> validate_required([:validation_number])
+    |> validate_number(:validation_number, greater_than: 99999, less_than: 1_000_000)
   end
 
   def changeset_login(params) do
@@ -31,6 +39,7 @@ defmodule Backend.User do
     |> validate_format(:email, ~r/@/)
     |> validate_length(:name, min: 2)
     |> put_change(:validated, false)
+    |> put_change(:validation_number, Enum.random(100_000..999_999))
     |> unique_constraint([:email])
   end
 

@@ -15,6 +15,8 @@ defmodule BackendWeb.Router do
     pipe_through [:auth, :api]
 
     get "/me", UsersController, :infos
+
+    post "/mail/validation", UsersController, :validation
   end
 
   scope "/api", BackendWeb do
@@ -42,15 +44,8 @@ defmodule BackendWeb.Router do
     end
   end
 
-  # Enables the Swoosh mailbox preview in development.
-  # Vini meu parceiro
-  # Note that preview only shows emails that were sent by the same
-  # node running the Phoenix server.
   if Mix.env() == :dev do
-    scope "/dev" do
-      pipe_through [:fetch_session, :protect_from_forgery]
-
-      forward "/mailbox", Plug.Swoosh.MailboxPreview
-    end
+    # If using Phoenix
+    forward "/sent_emails", Bamboo.SentEmailViewerPlug
   end
 end
