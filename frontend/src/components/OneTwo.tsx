@@ -1,4 +1,5 @@
 import React from 'react'
+import s from './style.module.css'
 export function OneTwo() {
-	return <div>OneTwdo</div>
+	return <div className={s.className}>OneTwdo</div>
 }
