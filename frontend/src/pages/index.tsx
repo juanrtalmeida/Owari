@@ -1,5 +1,5 @@
 import React from 'react'
 
-export function Index() {
+export default function Index() {
 	return <div>Home</div>
 }
