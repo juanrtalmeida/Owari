@@ -9,6 +9,7 @@ function App() {
 		<div className="app">
 			<Accordion buttonContent="Accordion">This is the content</Accordion>
 			<Accordion buttonContent="Who created this website?">@yukitoabe</Accordion>
+			<h1>Esta é uma change</h1>
 			<Accordion buttonContent="Accordion">This is the content</Accordion>
 			<Accordion buttonContent="Accordion">This is the content</Accordion>
 			<Accordion buttonContent="Accordion">This is the content</Accordion>
