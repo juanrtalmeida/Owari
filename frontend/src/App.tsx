@@ -12,6 +12,7 @@ function App() {
 			<Accordion buttonContent="Accordion">This is the content</Accordion>
 			<Accordion buttonContent="Accordion">This is the content</Accordion>
 			<Accordion buttonContent="Accordion">This is the content</Accordion>
+			<h2> Another change</h2>
 			<OneTwo />
 			<Router />
 		</div>
